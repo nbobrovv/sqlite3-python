@@ -4,6 +4,7 @@
 import argparse
 import psycopg2
 
+
 def selecting(con, student):
     cur= con.cursor()
     cur.execute(f"""SELECT * FROM students WHERE "Успеваемость" = '{student}'""")

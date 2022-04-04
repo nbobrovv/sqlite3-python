@@ -8,7 +8,7 @@ from sqlite3 import Error
 
 def selecting(con, student):
     cur= con.cursor()
-    cur.execute("""SELECT * FROM students WHERE "Успеваемость" = ?""", (student,))
+    cur.execute(f"""SELECT * FROM students WHERE "Успеваемость" = '{student}'""")
     print(cur.fetchall())
 
 
@@ -21,7 +21,7 @@ def table(con):
 def adding(con, name, group, grade):
     cur= con.cursor()
     cur.execute(f"""INSERT INTO students("ФИО", "Группа", "Успеваемость") 
-    VALUES(?, ?, ?);""", (name, group, grade))
+    VALUES('{name}', '{group}', '{grade}');""")
     con.commit()
 
 

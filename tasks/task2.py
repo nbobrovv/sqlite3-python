@@ -100,7 +100,7 @@ def main(command_line=None):
             password="b0brov5572",
             host="127.0.0.1",
             port="5432",
-            database="mydatabase"
+            database="postgres_db"
         )
         sql_table(connection)
         if args.command == "add":
